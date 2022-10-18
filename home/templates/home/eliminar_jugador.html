@@ -1,0 +1,15 @@
+{% extends 'padres/base2.html' %}
+
+{% block title_pagina %}
+<title>Eliminar jugador</title>
+{% endblock title_pagina %}
+
+{% block mi_contenido %}
+<form action={% url 'eliminar_jugador' jugador.id %} method="POST">
+    {% csrf_token %}
+    <p>
+        ¿Desea borrar el jugador {{jugador}}?
+    </p>
+    <button style="color:black; background-color: white; padding: 8px 20px; border: 2px solid #1C96FA;">Borrar</button>
+</form>
+{% endblock mi_contenido %}

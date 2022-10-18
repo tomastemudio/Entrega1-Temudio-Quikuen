@@ -1,0 +1,23 @@
+{% extends 'padres/base2.html' %}
+
+{% block title_pagina %}
+<title>Ver y editar jugadores</title>
+{% endblock title_pagina %}
+
+{% block mi_contenido %}
+<a class="navbar-brand" href={% url 'crear_jugador' %} style="text-align: center;">Crear jugador</a>
+<h3 style="padding:10px;">Listado de jugadores:</h3>
+    <p>
+        {% if object_list %}
+        {% for jugador in object_list %}
+            <li style="padding:10px;">
+                {{jugador}}
+                <a href={% url 'editar_jugador' jugador.id %} style="color: white;background-color: #31BA53;border:none;display: inline=block;padding: 10px 15px;text-align: center;font-size: 13px;" >Editar jugador</a>
+                <a href={% url 'eliminar_jugador' jugador.id %} style="color: white;background-color: #DE1F3D;border:none;display: inline=block;padding: 10px 15px;text-align: center;font-size: 13px;" >Eliminar jugador</a>
+            </li>
+        {% endfor %}
+        {% else %}
+        <p>No hay resultados disponibles. Debe crear jugadores para ver su lista.</p>
+        {% endif %}
+    </p>
+{% endblock mi_contenido %}

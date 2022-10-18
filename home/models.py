@@ -9,4 +9,4 @@ class Jugador(models.Model):
     liga = models.CharField(max_length = 30)
 
     def __str__(self):
-        return f'{self.nombre} {self.apellido}; nacionalidad: {self.nacionalidad}; liga: {self.liga}'
+        return f'Juagdor -- > {self.nombre} {self.apellido}. Nacionalidad --> {self.nacionalidad}. Liga --> {self.liga}'

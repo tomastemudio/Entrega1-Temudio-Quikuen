@@ -4,7 +4,8 @@
     Ejemplo: git copy https://github.com/tomastemudio/Entrega1-Temudio-Quikuen
 3. Para comenzar a utilizar la pagina podemos crear un entorno virtual o instalar las versiones de los paquetes incluidos en el archivo 'requirements.txt' , para instalar estos archivos debemos escribir en la terminal lo siguente: pip install -r + el archivo donde estan las versiones normalmente llamado requirements.txt. 
     Ejemplo: pip install -r requirements.txt
- 4. Una vez hecho todo lo anterior se debe inciar el servidor de Django desde la terminal con el comando 'python manage.py runserver'. Una vez hecho esto la terminal arrojara un link desde el cual se puede comenzar a utilizar la pagina e interactuar con ella.
+4. En este programa necesitamos un base de datos por esta razon debemos inicializarla. En la terminal escribimos 'python manage.py migrate'
+5. Una vez hecho todo lo anterior se debe inciar el servidor de Django desde la terminal con el comando 'python manage.py runserver'. Una vez hecho esto la terminal arrojara un link desde el cual se puede comenzar a utilizar la pagina e interactuar con ella.
 
 # Uso de la pagina
 El funcionamiento de la pagina es simple. El objetivo principal de esta es la creacion y visualizacion de jugadores de fubtol.

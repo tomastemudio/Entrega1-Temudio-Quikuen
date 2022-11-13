@@ -1,0 +1,18 @@
+{% extends 'padres/base.html' %}
+
+
+{% block title_pagina %}
+<title>Cambiar contraseña</title>
+{% endblock title_pagina %}
+
+{% block mi_contenido %}
+<h1 style="color:#0d6efd;">Cambiá tu contraseña</h1> <br>
+<form action={% url 'cambiar_contraseña' %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <br>
+    <button>Cambiar contraseña</button>
+</form>
+{% endblock mi_contenido %}

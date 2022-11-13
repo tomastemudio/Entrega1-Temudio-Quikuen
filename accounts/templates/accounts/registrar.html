@@ -1,0 +1,19 @@
+{% extends 'padres/base.html' %}
+
+
+{% block title_pagina %}
+<title>Registro</title>
+{% endblock title_pagina %}
+
+{% block mi_contenido %}
+<h1 style="color:#0d6efd;">¡Registrate aca!</h1>
+<p>Ingresá el nombre de usuario que quieras, un email y una contraseña para acceder</p>
+<form action={% url 'registrar' %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <br>
+    <button>Registrarse</button>
+</form>
+{% endblock mi_contenido %}

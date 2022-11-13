@@ -22,8 +22,15 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href={% url 'index' %}>Pagina inicial</a>
+                <a class="navbar-brand" href={% url 'index' %} >Pagina inicial</a>
                 <a class="navbar-brand" href={% url 'sobre_nosotros' %}>Sobre nosotros</a>
+                {% if request.user.is_authenticated %}
+                <a class="navbar-brand" href={% url 'perfil' %}> ¡Hola {{request.user.username}}!</a>
+                <a class="navbar-brand" href={% url 'logout' %}>Cerrar sesion</a>
+            {% else %}
+                <a class="navbar-brand" href={% url 'login' %}>Iniciar sesion</a>
+                <a class="navbar-brand" href={% url 'registrar' %}>Registarse</a>
+            {% endif %}
                 <p>Creado por Tomás Temudio y Thaiel Quikuen</p>
             </div>
         </nav>
@@ -55,6 +62,13 @@
                             <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
                             <a class="navbar-brand" href={% url 'ver_jugador' %}>Visualizar jugadores</a>
                             <p class="lead mb-0">Ingrese aquí para visualizar y editar los jugadores creados</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-person m-auto text-primary"></i></div>
+                            <a class="navbar-brand" href={% url 'editar_perfil' %}>Editar perfil</a>
+                            <p class="lead mb-0">Primero inicie sesión para poder visualizar y editar tu perfil</p>
                         </div>
                     </div>
                 </div>

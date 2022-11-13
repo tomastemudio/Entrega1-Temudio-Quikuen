@@ -24,6 +24,12 @@
             <div class="container">
                 <a class="navbar-brand" href={% url 'index' %}>Pagina inicial</a>
                 <a class="navbar-brand" href={% url 'sobre_nosotros' %}>Sobre nosotros</a>
+                {% if request.user.is_authenticated %}
+                    <a class="navbar-brand" href={% url 'logout' %}>Cerrar sesion</a>
+                {% else %}
+                    <a class="navbar-brand" href={% url 'login' %}>Iniciar sesion</a>
+                    <a class="navbar-brand" href={% url 'registrar' %}>Registarse</a>
+                {% endif %}
                 <p>Creado por Tomás Temudio y Thaiel Quikuen</p>
             </div>
         </nav>

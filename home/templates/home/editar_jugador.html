@@ -8,6 +8,7 @@
 <form action={% url 'editar_jugador' jugador.id %} method = "POST">
     {% csrf_token %}
     <table>
+        {{form.media}}
         {{form}}
     </table>
     <button style="color:black; background-color: white; padding: 8px 20px; border: 2px solid #1C96FA;">Editar</button>

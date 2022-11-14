@@ -8,6 +8,7 @@
 <form action={% url 'crear_jugador' %} method="POST" style="padding: 10px;">
     {% csrf_token %}
     <table>
+        {{form.media}}
         {{form}}
     </table>
     <button  style="color:black; background-color: white; padding: 8px 20px; border: 2px solid #1C96FA;">Crear</button>

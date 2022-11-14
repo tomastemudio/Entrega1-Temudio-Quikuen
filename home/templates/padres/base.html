@@ -57,6 +57,13 @@
                             <p class="lead mb-0">Ingrese aquí para visualizar y editar los jugadores creados</p>
                         </div>
                     </div>
+                   <div class="col-lg-4">
+                      <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                            <a class="navbar-brand" href={% url 'ver_jugador' %}>Visualizar Un jugador</a>
+                            <p class="lead mb-0">Visualizar Un Jugador</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -90,6 +97,8 @@
                             <a class="navbar-brand" href={% url 'crear_jugador' %}>Crear jugador</a>
                             <li class="list-inline-item">⋅</li>
                             <a class="navbar-brand" href={% url 'ver_jugador' %}>Ver jugadores</a>
+                            <li class="list-inline-item">⋅</li>
+                            <a class="navbar-brand" href={% url 'ver_unjugador' %}>Ver jugador</a>
                         </ul>
                     </div>
                 </div>

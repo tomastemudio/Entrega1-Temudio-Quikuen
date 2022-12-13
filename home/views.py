@@ -3,6 +3,7 @@ from home.models import Jugador
 from django.views.generic import ListView, DeleteView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from home.forms import BusquedaJugador
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 class VerJugador(LoginRequiredMixin, ListView):
@@ -12,7 +13,7 @@ class VerJugador(LoginRequiredMixin, ListView):
     def get_queryset(self):
         apellido = self.request.GET.get('apellido', '')
         if apellido:
-            object_list = self.model.objects.filter(apellido_icontains=apellido)
+            object_list = self.model.objects.filter(apellido__icontains=apellido)
         else:
             object_list = self.model.objects.all()
         return object_list

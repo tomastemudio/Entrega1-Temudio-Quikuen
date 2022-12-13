@@ -36,6 +36,8 @@ def registrar(request):
 @login_required        
 def perfil(request):
 
+    extensionUsuario, es_nuevo = ExtensionUsuario.objects.get_or_create(user=request.user)
+
     return render(request, 'accounts/perfil.html', {})
 
 @login_required

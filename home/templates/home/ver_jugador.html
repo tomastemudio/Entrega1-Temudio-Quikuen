@@ -16,7 +16,7 @@
     {% if object_list %}
         {% for jugador in object_list %}
             <li style="padding:10px;">
-                <a href={% url 'ver_unjugador' jugador.id %}> {{jugador}}</a>
+                {{jugador}}
                 <a href={% url 'editar_jugador' jugador.id %} style="color: white;background-color: #31BA53;border:none;display: inline=block;padding: 10px 15px;text-align: center;font-size: 13px;" >Editar jugador</a>
                 <a href={% url 'eliminar_jugador' jugador.id %} style="color: white;background-color: #DE1F3D;border:none;display: inline=block;padding: 10px 15px;text-align: center;font-size: 13px;" >Eliminar jugador</a>
             </li>

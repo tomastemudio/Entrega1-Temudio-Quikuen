@@ -28,7 +28,7 @@ class CrearJugador(CreateView):
     model = Jugador
     success_url = '/jugador/'
     template_name = 'home/crear_jugador.html'
-    fields = ['nombre', 'apellido', 'nacionalidad', 'liga', 'descripcion']
+    fields = ['nombre', 'apellido', 'nacionalidad', 'liga', 'descripcion','fechacrracion']
 
 class EditarJugador(UpdateView):
     model = Jugador

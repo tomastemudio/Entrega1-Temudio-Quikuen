@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from home.models import Jugador
-from django.views.generic import ListView, DeleteView
+from django.views.generic import ListView, DeleteView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from home.forms import BusquedaJugador
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -24,17 +24,24 @@ class VerJugador(LoginRequiredMixin, ListView):
         return context
      
 
+class VerJugadore(DetailView):
+    model = Jugador
+    template_name = 'home/ver_jugadore.html'
+
+
 class CrearJugador(CreateView):
     model = Jugador
     success_url = '/jugador/'
     template_name = 'home/crear_jugador.html'
     fields = ['nombre', 'apellido', 'nacionalidad', 'liga', 'descripcion','fechacrracion']
 
+
 class EditarJugador(UpdateView):
     model = Jugador
     success_url = '/jugador/'
     template_name = 'home/editar_jugador.html'
     fields = ['nombre', 'apellido', 'nacionalidad', 'liga', 'descripcion']
+
 
 class EliminarJugador(DeleteView):
     model = Jugador
